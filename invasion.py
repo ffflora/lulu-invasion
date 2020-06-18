@@ -15,10 +15,10 @@ def run_game():
     bg_color = lu_settings.bg_color
     while True:
         # monitor the mouse and keyboard events
-        gf.check_events()
+        gf.check_events(ship)
+        ship.update()
         # show the most recent drawn screen
-        screen.fill(bg_color)
-        ship.blitme()
-        pygame.display.flip()
+        gf.update_screen(lu_settings,screen,ship)
+        
 
 run_game()
