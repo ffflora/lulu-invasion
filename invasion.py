@@ -10,7 +10,7 @@ def run_game():
     pygame.display.set_caption("lulu Invasion")
     
     # Init a ship
-    ship = Ship(screen)
+    ship = Ship(lu_settings,screen)
     # set bgc 
     bg_color = lu_settings.bg_color
     while True:
