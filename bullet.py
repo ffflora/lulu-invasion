@@ -14,7 +14,17 @@ class Bullet(Sprite):
         self.rect.centerx = ship.rect.centerx
         self.rect.top = ship.rect.top
 
-        # save the location as floating points
+        # save the location as floating p   oints
         self.y = float(self.rect.y)
         self.color = lu_settings.bullet_color
         self.speed_factor = lu_settings.bullet_speed_factor
+
+    def update(self):
+        """Manage the location of the bullets
+        y gets smaller as the bullets move up."""
+        # update the location of the bullets in floating points
+        self.y -= self.speed_factor
+        self.rect.y = self.y
+
+    def draw_bullet(self):
+        pygame.draw.rect(self.screen, self.color, self.rect)
